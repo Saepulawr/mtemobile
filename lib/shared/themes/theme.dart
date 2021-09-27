@@ -130,7 +130,7 @@ class Themes {
     ),
   );
   static ThemeData lightTheme = ThemeData(
-    appBarTheme: AppBarTheme(brightness: Brightness.light),
+    appBarTheme: AppBarTheme(brightness: Brightness.dark),
     brightness: Brightness.light,
     backgroundColor: background,
     accentColor: secondary,

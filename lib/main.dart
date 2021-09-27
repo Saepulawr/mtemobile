@@ -46,13 +46,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ThemeBuilder(
-      defaultThemeMode: ThemeMode.dark,
+      defaultThemeMode: ThemeMode.light,
       darkTheme: Themes.darkTheme,
       lightTheme: Themes.lightTheme,
       builder: (context, regularTheme, darkTheme, themeMode) => GetMaterialApp(
         /// STEP 3. Add navigator key from Catcher. It will be used to navigate user to report page or to show dialog.
         // navigatorKey: Catcher.navigatorKey,
-        debugShowCheckedModeBanner: kDebugMode,
+        debugShowCheckedModeBanner: false,
 
         theme: regularTheme,
         darkTheme: darkTheme,
