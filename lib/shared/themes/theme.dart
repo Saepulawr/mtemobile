@@ -11,6 +11,7 @@ class Themes {
   static const Color primary = Color(0xff182243);
   static const Color primaryDark = Color(0xff047857);
   static const Color primaryLight = Color(0xffD1FAE5);
+  static const Color secondary = Color(0xff00a4f1);
   static const Color black = Color(0xff1F2937);
   static const Color blackLight = Color(0xffF3F4F6);
   static const Color grey = Color(0xff8A8E95);
@@ -115,9 +116,10 @@ class Themes {
   );
   //Theme
   static ThemeData darkTheme = ThemeData(
+    appBarTheme: AppBarTheme(brightness: Brightness.dark),
     brightness: Brightness.dark,
     backgroundColor: background,
-    accentColor: primaryDark,
+    accentColor: secondary,
     primaryColor: primary,
     textTheme: TextTheme(
       headline6: title,
@@ -128,9 +130,10 @@ class Themes {
     ),
   );
   static ThemeData lightTheme = ThemeData(
+    appBarTheme: AppBarTheme(brightness: Brightness.light),
     brightness: Brightness.light,
     backgroundColor: background,
-    accentColor: primaryDark,
+    accentColor: secondary,
     primaryColor: primary,
     textTheme: TextTheme(
       headline6: title,
