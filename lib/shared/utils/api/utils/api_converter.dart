@@ -9,7 +9,7 @@ terima kasih!.
 import 'dart:convert';
 
 import 'package:dio/dio.dart';
-import 'package:mtelektrik/modules/barang_masuk/models/barang_masuk_model/barang_masuk_model.dart';
+import 'package:mtemobile/modules/barang_masuk/models/barang_masuk_model/barang_masuk_model.dart';
 //code-gen.dart - tolong jangan dihapus comment ini!
 
 dynamic convertApiToModel<T>(Response response) {
@@ -19,7 +19,6 @@ dynamic convertApiToModel<T>(Response response) {
     return response.data;
   } else {
     switch (T) {
-
       case BarangMasukModel:
         return BarangMasukModel.fromJson(jsonDecode(response.data));
 //code-gen.dart - tolong jangan dihapus comment ini!

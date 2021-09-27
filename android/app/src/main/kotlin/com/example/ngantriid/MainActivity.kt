@@ -1,4 +1,4 @@
-package com.devortech.mtelektrik
+package com.devortech.mtemobile
 
 import io.flutter.embedding.android.FlutterActivity
 

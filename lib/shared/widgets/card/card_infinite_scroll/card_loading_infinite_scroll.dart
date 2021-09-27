@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mtelektrik/shared/themes/theme.dart';
+import 'package:mtemobile/shared/themes/theme.dart';
 
 List<Widget> cardLoadingInfiniteScroll() {
   return List.generate(

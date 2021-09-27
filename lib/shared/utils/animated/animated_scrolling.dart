@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mtelektrik/shared/widgets/show_up_animation-2.0.0/show_up_animation.dart';
+import 'package:mtemobile/shared/widgets/show_up_animation-2.0.0/show_up_animation.dart';
 
 Widget animatedScolling(
     {required Widget child,

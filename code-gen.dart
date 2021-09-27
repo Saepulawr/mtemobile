@@ -27,7 +27,7 @@ part 'tools/function/add_model.dart';
 part 'tools/data/init_data.dart';
 part 'tools/help/public_help.dart';
 
-const String packageName = "mtelektrik";
+const String packageName = "mtemobile";
 const String namaFile = "code-gen.dart";
 
 void main(List<String> arguments) {

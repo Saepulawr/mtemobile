@@ -1,8 +1,8 @@
 import 'dart:convert';
 
 import 'package:dio/dio.dart';
-import 'package:mtelektrik/shared/utils/api/utils/api_error_model.dart';
-import 'package:mtelektrik/shared/utils/error_handler/error_code.dart';
+import 'package:mtemobile/shared/utils/api/utils/api_error_model.dart';
+import 'package:mtemobile/shared/utils/error_handler/error_code.dart';
 
 enum ApiErrorType {
   connectTimeout,

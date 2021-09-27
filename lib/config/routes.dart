@@ -8,9 +8,9 @@ terima kasih!.
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mtelektrik/modules/splash_screen/view/splash_screen.dart';
-import 'package:mtelektrik/modules/main_layout/view/main_layout.dart';
-import 'package:mtelektrik/modules/barang_masuk/view/barang_masuk.dart';
+import 'package:mtemobile/modules/splash_screen/view/splash_screen.dart';
+import 'package:mtemobile/modules/main_layout/view/main_layout.dart';
+import 'package:mtemobile/modules/barang_masuk/view/barang_masuk.dart';
 //code-gen.dart - tolong jangan dihapus comment ini!
 part 'routing_callback.dart';
 

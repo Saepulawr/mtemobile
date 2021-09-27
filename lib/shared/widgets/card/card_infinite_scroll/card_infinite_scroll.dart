@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:mtelektrik/config/const.dart';
-import 'package:mtelektrik/shared/themes/theme.dart';
-import 'package:mtelektrik/shared/utils/animated/animated_scrolling.dart';
-import 'package:mtelektrik/shared/widgets/card/card_infinite_scroll/models/data.dart';
-import 'package:mtelektrik/shared/widgets/custom_progressbar/custom_progressbar.dart';
-import 'package:mtelektrik/shared/widgets/image/network_image.dart';
-import 'package:mtelektrik/shared/widgets/show_up_animation-2.0.0/show_up_animation.dart';
+import 'package:mtemobile/config/const.dart';
+import 'package:mtemobile/shared/themes/theme.dart';
+import 'package:mtemobile/shared/utils/animated/animated_scrolling.dart';
+import 'package:mtemobile/shared/widgets/card/card_infinite_scroll/models/data.dart';
+import 'package:mtemobile/shared/widgets/custom_progressbar/custom_progressbar.dart';
+import 'package:mtemobile/shared/widgets/image/network_image.dart';
+import 'package:mtemobile/shared/widgets/show_up_animation-2.0.0/show_up_animation.dart';
 
 class CardInfiniteScroll extends StatelessWidget {
   final DataCardInfiniteScroll data;

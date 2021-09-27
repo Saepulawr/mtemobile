@@ -1,8 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mtelektrik/config/routes.dart';
-import 'package:mtelektrik/shared/themes/theme.dart';
+import 'package:mtemobile/config/routes.dart';
+import 'package:mtemobile/shared/themes/theme.dart';
 import 'package:stacked_themes/stacked_themes.dart';
 
 // import 'package:catcher/catcher.dart';

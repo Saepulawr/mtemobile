@@ -1,5 +1,5 @@
 class Const {
-  static const String productName = "mte";
+  static const String productName = "mtemobile";
   //KEY LOCAL STORAGE
 
   //other

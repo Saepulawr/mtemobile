@@ -1,5 +1,5 @@
 import 'package:flutter/foundation.dart';
-import 'package:mtelektrik/shared/utils/push_notification/models/push_notification_action_model/models/push_notification_action_model.dart';
+import 'package:mtemobile/shared/utils/push_notification/models/push_notification_action_model/models/push_notification_action_model.dart';
 
 @immutable
 class PushNotificationModel {

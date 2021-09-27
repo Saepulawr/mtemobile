@@ -3,7 +3,7 @@ import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mtelektrik/shared/widgets/shimmer/shimmer.dart';
+import 'package:mtemobile/shared/widgets/shimmer/shimmer.dart';
 
 class Themes {
   Themes._();

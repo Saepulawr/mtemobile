@@ -1,4 +1,4 @@
-part of 'package:mtelektrik/config/language.dart';
+part of 'package:mtemobile/config/language.dart';
 
 Future<void> loadLanguage(AvailableLanguage language) async {
   switch (language) {

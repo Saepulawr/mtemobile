@@ -1,15 +1,15 @@
 {
   "project_info": {
     "project_number": "747846497913",
-    "project_id": "mtelektrik-e6ec6",
-    "storage_bucket": "mtelektrik-e6ec6.appspot.com"
+    "project_id": "mtemobile-e6ec6",
+    "storage_bucket": "mtemobile-e6ec6.appspot.com"
   },
   "client": [
     {
       "client_info": {
         "mobilesdk_app_id": "1:747846497913:android:961531596b1d91bc4746a8",
         "android_client_info": {
-          "package_name": "com.devortech.mtelektrik"
+          "package_name": "com.devortech.mtemobile"
         }
       },
       "oauth_client": [

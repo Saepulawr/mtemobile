@@ -1,8 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.devortech.mtelektrik">
+    package="com.devortech.mtemobile">
     <uses-permission android:name="android.permission.INTERNET"/>
    <application
-        android:label="mte"
+        android:label="mtemobile"
         android:icon="@mipmap/launcher_icon">
         <activity
             android:name=".MainActivity"

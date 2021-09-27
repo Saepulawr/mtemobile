@@ -2,8 +2,8 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
-import 'package:mtelektrik/shared/utils/api/utils/api_error_handler.dart';
-import 'package:mtelektrik/shared/utils/api/utils/api_result.dart';
+import 'package:mtemobile/shared/utils/api/utils/api_error_handler.dart';
+import 'package:mtemobile/shared/utils/api/utils/api_result.dart';
 import 'package:path/path.dart';
 
 import 'api_converter.dart';

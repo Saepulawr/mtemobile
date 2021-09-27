@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/instance_manager.dart';
-import 'package:mtelektrik/config/language.dart';
-import 'package:mtelektrik/handler/firebase_messaging_handler.dart';
-import 'package:mtelektrik/handler/push_notification_action_handler.dart';
-import 'package:mtelektrik/config/routes.dart';
-import 'package:mtelektrik/shared/themes/theme.dart';
-import 'package:mtelektrik/shared/utils/firebase_messaging/firebase_messaging_utils.dart';
-import 'package:mtelektrik/shared/utils/local_storage/local_storage.dart';
-import 'package:mtelektrik/shared/utils/push_notification/push_notification.dart';
-import 'package:mtelektrik/shared/widgets/after_layout/after_layout.dart';
+import 'package:mtemobile/config/language.dart';
+import 'package:mtemobile/handler/firebase_messaging_handler.dart';
+import 'package:mtemobile/handler/push_notification_action_handler.dart';
+import 'package:mtemobile/config/routes.dart';
+import 'package:mtemobile/shared/themes/theme.dart';
+import 'package:mtemobile/shared/utils/firebase_messaging/firebase_messaging_utils.dart';
+import 'package:mtemobile/shared/utils/local_storage/local_storage.dart';
+import 'package:mtemobile/shared/utils/push_notification/push_notification.dart';
+import 'package:mtemobile/shared/widgets/after_layout/after_layout.dart';
 
 class SplashScreen extends StatefulWidget {
   SplashScreen({Key? key}) : super(key: key);

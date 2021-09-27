@@ -1,8 +1,8 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:mtelektrik/shared/utils/language/language_model.dart';
+import 'package:mtemobile/shared/utils/language/language_model.dart';
 import 'package:flutter/services.dart' show rootBundle;
-import 'package:mtelektrik/shared/widgets/easy_richtext/easy_rich_text.dart';
+import 'package:mtemobile/shared/widgets/easy_richtext/easy_rich_text.dart';
 part '../shared/utils/language/language.dart';
 
 extension LanguageUtils on String? {

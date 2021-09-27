@@ -6,7 +6,7 @@ tidak mengubah apapun!,
 terima kasih!.
 */
 import 'package:flutter/material.dart';
-import 'package:mtelektrik/config/language.dart';
+import 'package:mtemobile/config/language.dart';
 
 class LanguageModel {
   final String? networkErrorConnectionTimeout;

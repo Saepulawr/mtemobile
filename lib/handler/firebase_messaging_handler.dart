@@ -1,7 +1,7 @@
 import 'package:firebase_messaging/firebase_messaging.dart';
-import 'package:mtelektrik/handler/logger_handler.dart';
-import 'package:mtelektrik/shared/utils/push_notification/models/push_notification_action_model/models/push_notification_action_model.dart';
-import 'package:mtelektrik/shared/utils/push_notification/push_notification.dart';
+import 'package:mtemobile/handler/logger_handler.dart';
+import 'package:mtemobile/shared/utils/push_notification/models/push_notification_action_model/models/push_notification_action_model.dart';
+import 'package:mtemobile/shared/utils/push_notification/push_notification.dart';
 import 'package:flutter/foundation.dart';
 
 Future<void> firebaseMessageingHandler(RemoteMessage? message) async {

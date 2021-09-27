@@ -5,7 +5,7 @@ class ini untuk internal error agar memudahkan developer untuk mencari pengebab 
 dan untuk memberitahukan kepada user jika diperlukan
 ** semua message pada setiap error akan di translate kedalam bahasa yang telah dipilih
 */
-import 'package:mtelektrik/config/language.dart';
+import 'package:mtemobile/config/language.dart';
 
 class ErrorCode {
   static ErrorCodeModel get networkConnectionTimeout => ErrorCodeModel(

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mtelektrik/modules/barang_masuk/view/barang_masuk.dart';
-import 'package:mtelektrik/shared/themes/theme.dart';
+import 'package:mtemobile/modules/barang_masuk/view/barang_masuk.dart';
+import 'package:mtemobile/shared/themes/theme.dart';
 
 class MainLayout extends StatefulWidget {
   MainLayout({Key? key}) : super(key: key);

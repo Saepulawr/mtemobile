@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:mtelektrik/shared/utils/animated/animated_scrolling.dart';
-import 'package:mtelektrik/shared/widgets/flutter_staggered_grid_view/src/widgets/sliver.dart';
-import 'package:mtelektrik/shared/widgets/flutter_staggered_grid_view/src/widgets/staggered_tile.dart';
-import 'package:mtelektrik/shared/widgets/show_up_animation-2.0.0/show_up_animation.dart';
+import 'package:mtemobile/shared/utils/animated/animated_scrolling.dart';
+import 'package:mtemobile/shared/widgets/flutter_staggered_grid_view/src/widgets/sliver.dart';
+import 'package:mtemobile/shared/widgets/flutter_staggered_grid_view/src/widgets/staggered_tile.dart';
+import 'package:mtemobile/shared/widgets/show_up_animation-2.0.0/show_up_animation.dart';
 
 class InfiniteSliverStaggeredGridView extends StatefulWidget {
   final double scrollThreshold;

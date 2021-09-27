@@ -6,7 +6,7 @@ tidak mengubah apapun!,
 terima kasih!.
 */
 
-part 'package:mtelektrik/config/api.dart';
+part 'package:mtemobile/config/api.dart';
 
 class ApiEndpoint {
   //host yang aktif dengan profile yang di pilih
@@ -15,5 +15,6 @@ class ApiEndpoint {
     _hostApi = host ?? _hostAktif;
   }
   //code-gen.dart - tolong jangan dihapus comment ini!
-  String get barangMasukGetDaftarBarangMasukEndpoint => _hostApi + "/mtemobile/api/barangmasuk/list";
+  String get barangMasukGetDaftarBarangMasukEndpoint =>
+      _hostApi + "/mtemobile/api/barangmasuk/list";
 }

@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'dart:math';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
-import 'package:mtelektrik/shared/utils/push_notification/models/push_notification_action_model/models/push_notification_action_model.dart';
+import 'package:mtemobile/shared/utils/push_notification/models/push_notification_action_model/models/push_notification_action_model.dart';
 
 class PushNotification {
   static final _flutterLocalNotificationsPlugin =

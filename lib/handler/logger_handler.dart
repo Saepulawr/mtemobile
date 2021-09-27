@@ -1,4 +1,4 @@
-import 'package:mtelektrik/shared/utils/logger/logger.dart';
+import 'package:mtemobile/shared/utils/logger/logger.dart';
 
 final _logger = Logger();
 void printError(dynamic message, [dynamic error, StackTrace? stackTrace]) {

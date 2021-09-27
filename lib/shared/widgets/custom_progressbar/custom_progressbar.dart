@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mtelektrik/shared/utils/math/math.dart';
+import 'package:mtemobile/shared/utils/math/math.dart';
 
 class ProgressBar extends StatelessWidget {
   final double height;
