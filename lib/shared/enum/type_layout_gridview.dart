@@ -1,0 +1,4 @@
+enum TypeLayoutGridView {
+  doubleRow,
+  singleRow,
+}

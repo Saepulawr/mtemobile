@@ -1,0 +1,13 @@
+{
+    "networkErrorConnectionTimeout": "Koneksi Kehabisan Waktu!",
+    "networkErrorSendTimeout": "Kehabisan Waktu Saat Mengirim Data!",
+    "networkErrorReceiveTimeout": "Kehabisan Waktu Saat Menerima Data!",
+    "networkErrorServer": "Ada Kesalahan Pada Server!",
+    "networkErrorConnectionCancel": "Koneksi Dibatalkan!",
+    "networkErrorInternal": "Ada Kesalahan Pada Jaringan Internal Anda!",
+    "recommendedForYou": "Rekomendasi Untukmu",
+    "languageCode": "id",
+    "languageName": "Indonesia",
+    "countryCode": "ID",
+    "languageVersion": "1.0.0"
+}

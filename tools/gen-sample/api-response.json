@@ -1,0 +1,91 @@
+{
+    "data": {
+        "result": [
+            {
+                "id": "1d78d1b9-68a1-48ce-8a76-b50d0f102268",
+                "jenisRequest": "AbsensiOnline",
+                "subJenisRequest": "DaftarFR",
+                "jenisAbsensi": null,
+                "kelompokJenisAbsensi": null,
+                "userEssId": "fa3cadeb-aada-495e-9140-3ca6aac0dcb3",
+                "namaUserEss": "Dim",
+                "tanggalRequest": "20210709",
+                "tanggalAwal": "20210709",
+                "tanggalAkhir": "20210709",
+                "jamAwal": null,
+                "jamAkhir": null,
+                "fullDay": false,
+                "awalAkhirHari": null,
+                "flagHariAwal": null,
+                "flagHariAkhir": null,
+                "jumlahHari": 0.0,
+                "jamTugasPerHari": null,
+                "jamIstirahatTugasPerHari": null,
+                "jamLembur": null,
+                "jamIstirahatLembur": null,
+                "dapatCutiPengganti": false,
+                "statusRequest": "Pending",
+                "keterangan": "",
+                "alasanTolak": null,
+                "haveAttachment": false,
+                "isTrxPembatalan": false,
+                "nmShift": null,
+                "nmKategoriReimburse": null,
+                "nilai": null,
+                "nmPaketLembur": null,
+                "tanggalRequestRefTrxPembatalan": null,
+                "keteranganRefTrxPembatalan": null,
+                "alasanTolakRefTrxPembatalan": null,
+                "refTrxIdAbsensiOnline": null,
+                "refTrxNumberAbsensiOnline": null,
+                "refTrxDateAbsensiOnline": null,
+                "tanggalAbsenAbsensiOnline": null,
+                "tanggalMasukAbsensiOnline": null,
+                "tanggalKeluarAbsensiOnline": null,
+                "jamMasukAbsensiOnline": null,
+                "jamKeluarAbsensiOnline": null,
+                "latitudeMasukAbsensiOnline": null,
+                "longitudeMasukAbsensiOnline": null,
+                "latitudeKeluarAbsensiOnline": null,
+                "longitudeKeluarAbsensiOnline": null,
+                "version": 3,
+                "tanggalAcuanSorting": "20210709",
+                "requestApprovalStatusDetailList": [
+                    {
+                        "requestApprovalStatusId": "1d78d1b9-68a1-48ce-8a76-b50d0f102268",
+                        "userApproverId": "40737cef-8787-433c-9f44-241b5cac5d77",
+                        "namaUserApprover": "Atasan Jbtan1",
+                        "urutanApproval": 1,
+                        "timestampApproval": null,
+                        "statusApproval": "Pending",
+                        "keteranganApprover": null,
+                        "alasanTolakApprover": null
+                    },
+                    {
+                        "requestApprovalStatusId": "1d78d1b9-68a1-48ce-8a76-b50d0f102268",
+                        "userApproverId": "3a44a4b1-14b0-4499-9471-9274ec9b25ea",
+                        "namaUserApprover": "Atasan Spv",
+                        "urutanApproval": 2,
+                        "timestampApproval": null,
+                        "statusApproval": "Pending",
+                        "keteranganApprover": null,
+                        "alasanTolakApprover": null
+                    }
+                ],
+                "requestApprovalStatusDetailListRefTrxPembatalan": null
+            }
+        ]
+    },
+    "meta": {
+        "pagination": {
+            "page": 1,
+            "perPage": 100,
+            "pages": 1,
+            "dataCount": 1
+        }
+    },
+    "errors": [],
+    "notices": [],
+    "warnings": [],
+    "status": "ok"
+}

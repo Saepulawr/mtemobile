@@ -1,0 +1,10 @@
+{
+    "id": "UUID",
+    "image": "url",
+    "title": "title",
+    "organizerName": "nama",
+    "location": "Kota, Provinsi",
+    "dateTime": "20 Oktober 2020 - 13:00 WIB",
+    "quota": 200,
+    "joinedParticipant": 19
+}
