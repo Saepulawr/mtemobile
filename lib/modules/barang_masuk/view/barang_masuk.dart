@@ -22,6 +22,7 @@ class _BarangMasukState extends State<BarangMasuk>
     with AutomaticKeepAliveClientMixin<BarangMasuk> {
   BarangMasukController _barangMasukController = Get.find();
   ScrollController _scrollController = ScrollController();
+  String _searchQuery = "";
   @override
   Widget build(BuildContext context) {
     super.build(context);
@@ -42,9 +43,15 @@ class _BarangMasukState extends State<BarangMasuk>
                 children: [
                   Expanded(
                     child: SearchTextField(
-                        focus: false,
-                        hintText: "Cari",
-                        borderRadius: BorderRadius.all(Radius.circular(10))),
+                      focus: false,
+                      hintText: "Cari",
+                      borderRadius: BorderRadius.all(Radius.circular(10)),
+                      onEditingComplete: (query) async {
+                        _searchQuery = query;
+                        await _barangMasukController.getListBarangMasuk(
+                            refresh: true, searchQuery: query);
+                      },
+                    ),
                   ),
                   SizedBox(
                     width: Themes.margin16,
@@ -60,6 +67,7 @@ class _BarangMasukState extends State<BarangMasuk>
             automaticallyImplyLeading: false,
           ),
           pullToRefresh(onRefresh: () async {
+            //refresh ini hanya clear data yg di simpan,dan untuk get data kembali,aksinya dilakukan widget infinitescroll
             await _barangMasukController.getListBarangMasuk(refresh: true);
           }),
           SliverToBoxAdapter(
@@ -72,7 +80,8 @@ class _BarangMasukState extends State<BarangMasuk>
             builder: (controller) {
               return InfiniteSliverStaggeredGridView(
                 hasNext: !controller.isMaxData,
-                nextData: () async => controller.getListBarangMasuk(),
+                nextData: () async =>
+                    controller.getListBarangMasuk(searchQuery: _searchQuery),
                 itemBuilder: (context, index) {
                   return CardBarangMasuk(
                       data: controller.listBarangMasuk[index]);
