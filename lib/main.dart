@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mtemobile/config/routes.dart';
+import 'package:mtemobile/modules/barang_masuk/controller/barang_masuk_controller.dart';
 import 'package:mtemobile/shared/themes/theme.dart';
 import 'package:stacked_themes/stacked_themes.dart';
 
@@ -39,7 +40,9 @@ Future<void> main() async {
   runApp(MyApp());
 }
 
-void _loadController() {}
+void _loadController() {
+  Get.put(BarangMasukController());
+}
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.

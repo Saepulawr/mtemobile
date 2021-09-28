@@ -91,8 +91,8 @@ class Themes {
   }
 
   //font
-  static TextStyle primaryFont = GoogleFonts.nunito(color: black);
-  static TextStyle secondayFont = GoogleFonts.workSans(color: black);
+  static TextStyle primaryFont = GoogleFonts.nunito(color: Colors.white);
+  static TextStyle secondayFont = GoogleFonts.workSans(color: Colors.white);
   //Typography
   static TextStyle title = primaryFont.copyWith(
     fontSize: 16,

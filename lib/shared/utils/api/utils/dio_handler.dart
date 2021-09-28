@@ -59,7 +59,6 @@ class DioHandler<T> {
       onSendProgress(int sent, int total)?,
       onReceiveProgress(int receive, int total)?}) async {
     try {
-      if (kDebugMode) print(data);
       Response response = await _dio.post(url,
           queryParameters: params ?? {},
           data: sendDataAsForm ? FormData.fromMap(data) : data,

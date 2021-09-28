@@ -3,5 +3,5 @@ class Const {
   //KEY LOCAL STORAGE
 
   //other
-  static const double baseMarginHorizontal = 16.0;
+  static const double baseMarginHorizontal = 0.0;
 }

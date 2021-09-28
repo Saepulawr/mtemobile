@@ -123,30 +123,27 @@ class NetworkImageLoader extends StatelessWidget {
       ),
       fit: fit ?? BoxFit.fill,
       placeholder: (context, url) {
-        // return Container(
-        //   height: double.infinity,
-        //   width: double.infinity,
-        //   padding: EdgeInsets.all(16),
-        //   decoration: BoxDecoration(
-        //       borderRadius: borderRadius,
-        //       color: backgroundColor ?? Colors.white,
-        //       boxShadow: shadow),
-        //   child: Transform.scale(
-        //     scale: 0.5,
-        //     child: Image.asset(
-        //       "assets/images/logo.png",
-        //       color: Colors.grey,
-        //       fit: BoxFit.fitHeight,
-        //     ),
-        //   ),
-        // );
-        return Themes.defaultShimmer(
-            child: Container(
-          decoration:
-              BoxDecoration(color: Colors.white, borderRadius: borderRadius),
-          height: height,
-          width: width,
-        ));
+        return Container(
+          height: double.infinity,
+          width: double.infinity,
+          padding: EdgeInsets.all(16),
+          decoration: BoxDecoration(
+              borderRadius: borderRadius,
+              color: backgroundColor ?? Colors.white,
+              boxShadow: shadow),
+          child: Image.asset(
+            "assets/images/logo.png",
+            // color: Colors.grey,
+            fit: BoxFit.fitWidth,
+          ),
+        );
+        // return Themes.defaultShimmer(
+        //     child: Container(
+        //   decoration:
+        //       BoxDecoration(color: Colors.white, borderRadius: borderRadius),
+        //   height: height,
+        //   width: width,
+        // ));
       },
       height: height,
       width: width,
@@ -160,15 +157,14 @@ class NetworkImageLoader extends StatelessWidget {
               height: height,
               width: width,
               padding: EdgeInsets.all(16),
-              child: SimpleShadow(
-                child: FittedBox(
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Icon(
-                      FontAwesome5.exclamation_triangle,
-                      color: Colors.grey,
-                      size: 35,
-                    ),
+              child: FittedBox(
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Icon(
+                    // FontAwesome5.exclamation_triangle,
+                    Icons.report_problem,
+                    color: Colors.white,
+                    size: 35,
                   ),
                 ),
               )),

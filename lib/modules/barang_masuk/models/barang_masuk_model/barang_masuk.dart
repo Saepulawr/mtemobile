@@ -2,12 +2,14 @@ import '../../../../shared/models/induction_motor_model/induction_motor.dart';
 
 class BarangMasuk {
   final String? id;
+  final String? image;
   final String? ownerName;
   final String? ownerAddress;
   final String? dateIn;
   final InductionMotor? inductionMotor;
   const BarangMasuk({
     this.id,
+    this.image,
     this.ownerName,
     this.ownerAddress,
     this.dateIn,
@@ -15,11 +17,12 @@ class BarangMasuk {
   });
   @override
   String toString() {
-    return 'BarangMasuk(id: $id, ownerName: $ownerName, ownerAddress: $ownerAddress, dateIn: $dateIn, inductionMotor: $inductionMotor)';
+    return 'BarangMasuk(id: $id, image : $image, ownerName: $ownerName, ownerAddress: $ownerAddress, dateIn: $dateIn, inductionMotor: $inductionMotor)';
   }
 
   factory BarangMasuk.fromJson(Map<String, dynamic> json) => BarangMasuk(
         id: json['id'] as String?,
+        image: json['image'] as String?,
         ownerName: json['ownerName'] as String?,
         ownerAddress: json['ownerAddress'] as String?,
         dateIn: json['dateIn'] as String?,
@@ -30,6 +33,7 @@ class BarangMasuk {
       );
   Map<String, dynamic> toJson() => {
         'id': id,
+        'image': image,
         'ownerName': ownerName,
         'ownerAddress': ownerAddress,
         'dateIn': dateIn,
