@@ -22,7 +22,7 @@ class _BarangMasukState extends State<BarangMasuk>
     with AutomaticKeepAliveClientMixin<BarangMasuk> {
   BarangMasukController _barangMasukController = Get.find();
   ScrollController _scrollController = ScrollController();
-  String _searchQuery = "";
+  TextEditingController _textEditingController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     super.build(context);
@@ -43,13 +43,15 @@ class _BarangMasukState extends State<BarangMasuk>
                 children: [
                   Expanded(
                     child: SearchTextField(
+                      controller: _textEditingController,
                       focus: false,
                       hintText: "Cari",
                       borderRadius: BorderRadius.all(Radius.circular(10)),
                       onEditingComplete: (query) async {
-                        _searchQuery = query;
                         await _barangMasukController.getListBarangMasuk(
                             refresh: true, searchQuery: query);
+                        await _barangMasukController.getListBarangMasuk(
+                            refresh: false, searchQuery: query);
                       },
                     ),
                   ),
@@ -68,7 +70,8 @@ class _BarangMasukState extends State<BarangMasuk>
           ),
           pullToRefresh(onRefresh: () async {
             //refresh ini hanya clear data yg di simpan,dan untuk get data kembali,aksinya dilakukan widget infinitescroll
-            await _barangMasukController.getListBarangMasuk(refresh: true);
+            await _barangMasukController.getListBarangMasuk(
+                refresh: true, searchQuery: _textEditingController.text);
           }),
           SliverToBoxAdapter(
             child: SizedBox(
@@ -80,8 +83,10 @@ class _BarangMasukState extends State<BarangMasuk>
             builder: (controller) {
               return InfiniteSliverStaggeredGridView(
                 hasNext: !controller.isMaxData,
-                nextData: () async =>
-                    controller.getListBarangMasuk(searchQuery: _searchQuery),
+                nextData: () async {
+                  await controller.getListBarangMasuk(
+                      searchQuery: _textEditingController.text);
+                },
                 itemBuilder: (context, index) {
                   return CardBarangMasuk(
                       data: controller.listBarangMasuk[index]);

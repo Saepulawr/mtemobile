@@ -11,6 +11,7 @@ class BarangMasukController extends GetxController {
   bool isMaxData = false;
   Future<void> getListBarangMasuk(
       {bool refresh = false, String searchQuery = ""}) async {
+    print("$refresh  $searchQuery $isMaxData $listBarangMasukPage");
     if (refresh) {
       listBarangMasukPage = 1;
       listBarangMasuk.clear();
@@ -22,10 +23,10 @@ class BarangMasukController extends GetxController {
         page: listBarangMasukPage, searchQuery: searchQuery);
     if (result.isError) {
       //error
+      printError(info: result.error!.data!.message!);
     } else {
       listBarangMasuk.value.addAll(result.data!.data!.barangMasuk!);
       isMaxData = (listBarangMasukPage >= result.data!.data!.maxPage!);
-
       listBarangMasukPage++;
       update(["BarangMasuk"]);
     }
