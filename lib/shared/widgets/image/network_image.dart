@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fluttericon/font_awesome5_icons.dart';
-import 'package:mtemobile/shared/themes/theme.dart';
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:mtemobile/shared/widgets/shadow/simple_shadow.dart';
 // import 'package:extended_image/extended_image.dart';
 // import 'package:mtemobile/shared/widgets/shadow/simple_shadow.dart';
 

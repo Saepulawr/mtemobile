@@ -1,7 +1,6 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:fluttericon/font_awesome5_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 @immutable
@@ -149,7 +148,7 @@ class _SearchTextFieldState extends State<SearchTextField> {
                             },
                       icon: widget.suffixIcon ??
                           Icon(
-                            FontAwesome5.times_circle,
+                            Icons.cancel,
                             color: widget.suffixIconColor ?? Colors.grey,
                             size: widget.suffixIconSize ?? 16,
                           ),

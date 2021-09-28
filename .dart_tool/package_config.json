@@ -26,12 +26,6 @@
       "languageVersion": "2.12"
     },
     {
-      "name": "bootstrap_icons",
-      "rootUri": "file:///home/sofco/flutter/.pub-cache/hosted/pub.dartlang.org/bootstrap_icons-1.5.0",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
-    },
-    {
       "name": "cached_network_image",
       "rootUri": "file:///home/sofco/flutter/.pub-cache/hosted/pub.dartlang.org/cached_network_image-3.1.0",
       "packageUri": "lib/",
@@ -46,18 +40,6 @@
     {
       "name": "cached_network_image_web",
       "rootUri": "file:///home/sofco/flutter/.pub-cache/hosted/pub.dartlang.org/cached_network_image_web-1.0.1",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
-    },
-    {
-      "name": "card_swiper",
-      "rootUri": "file:///home/sofco/flutter/.pub-cache/hosted/pub.dartlang.org/card_swiper-1.0.4",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
-    },
-    {
-      "name": "carousel_slider",
-      "rootUri": "file:///home/sofco/flutter/.pub-cache/hosted/pub.dartlang.org/carousel_slider-4.0.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -206,20 +188,8 @@
       "languageVersion": "2.12"
     },
     {
-      "name": "flutter_signin_button",
-      "rootUri": "file:///home/sofco/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_signin_button-2.0.0",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
-    },
-    {
       "name": "flutter_statusbarcolor_ns",
       "rootUri": "file:///home/sofco/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_statusbarcolor_ns-0.3.0-nullsafety",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
-    },
-    {
-      "name": "flutter_sticky_header",
-      "rootUri": "file:///home/sofco/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_sticky_header-0.6.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -238,18 +208,6 @@
     {
       "name": "flutter_web_plugins",
       "rootUri": "file:///home/sofco/flutter/packages/flutter_web_plugins",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
-    },
-    {
-      "name": "fluttericon",
-      "rootUri": "file:///home/sofco/flutter/.pub-cache/hosted/pub.dartlang.org/fluttericon-2.0.0",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
-    },
-    {
-      "name": "font_awesome_flutter",
-      "rootUri": "file:///home/sofco/flutter/.pub-cache/hosted/pub.dartlang.org/font_awesome_flutter-9.1.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -394,12 +352,6 @@
     {
       "name": "pedantic",
       "rootUri": "file:///home/sofco/flutter/.pub-cache/hosted/pub.dartlang.org/pedantic-1.11.1",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
-    },
-    {
-      "name": "persistent_bottom_nav_bar",
-      "rootUri": "file:///home/sofco/flutter/.pub-cache/hosted/pub.dartlang.org/persistent_bottom_nav_bar-4.0.2",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -602,12 +554,6 @@
       "languageVersion": "2.12"
     },
     {
-      "name": "value_layout_builder",
-      "rootUri": "file:///home/sofco/flutter/.pub-cache/hosted/pub.dartlang.org/value_layout_builder-0.3.1",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
-    },
-    {
       "name": "vector_math",
       "rootUri": "file:///home/sofco/flutter/.pub-cache/hosted/pub.dartlang.org/vector_math-2.1.0",
       "packageUri": "lib/",
@@ -644,7 +590,7 @@
       "languageVersion": "2.12"
     }
   ],
-  "generated": "2021-09-28T03:20:27.529925Z",
+  "generated": "2021-09-28T04:16:47.232268Z",
   "generator": "pub",
   "generatorVersion": "2.13.1"
 }
