@@ -71,7 +71,6 @@ class _BarangMasukState extends State<BarangMasuk>
             id: "BarangMasuk",
             builder: (controller) {
               return InfiniteSliverStaggeredGridView(
-                loadingWidget: cardLoadingInfiniteScroll(),
                 hasNext: !controller.isMaxData,
                 nextData: () async => controller.getListBarangMasuk(),
                 itemBuilder: (context, index) {
