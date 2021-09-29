@@ -152,6 +152,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "flash",
+      "rootUri": "file:///home/sofco/flutter/.pub-cache/hosted/pub.dartlang.org/flash-2.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "flutter",
       "rootUri": "file:///home/sofco/flutter/packages/flutter",
       "packageUri": "lib/",
@@ -590,7 +596,7 @@
       "languageVersion": "2.12"
     }
   ],
-  "generated": "2021-09-28T04:16:47.232268Z",
+  "generated": "2021-09-28T04:26:23.292123Z",
   "generator": "pub",
   "generatorVersion": "2.13.1"
 }

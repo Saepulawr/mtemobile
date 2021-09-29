@@ -9,12 +9,14 @@ Widget primaryButton({
   double fontSize = 14.0,
   EdgeInsets? padding,
   double elevation = 3,
+  Color? backgroundColor,
+  Color? textColor,
 }) {
   return ElevatedButton(
     onPressed: onPressed,
     style: ElevatedButton.styleFrom(
       elevation: elevation,
-      primary: Themes.primary,
+      primary: backgroundColor ?? Themes.primary,
       shape: new RoundedRectangleBorder(
         borderRadius: new BorderRadius.circular(10),
       ),
@@ -26,7 +28,7 @@ Widget primaryButton({
         style: GoogleFonts.nunito(
             fontSize: fontSize,
             fontWeight: FontWeight.w700,
-            color: Colors.white),
+            color: textColor ?? Colors.white),
       ),
     ),
   );

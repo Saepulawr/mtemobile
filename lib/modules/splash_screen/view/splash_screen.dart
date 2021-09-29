@@ -34,9 +34,9 @@ class _SplashScreenState extends State<SplashScreen>
                 width: logoSize,
                 height: logoSize,
               ),
-              CircularProgressIndicator(
-                color: Themes.secondary,
-              ),
+              // CircularProgressIndicator(
+              //   color: Themes.secondary,
+              // ),
               Spacer()
             ],
           ),

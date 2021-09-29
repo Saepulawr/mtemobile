@@ -11,6 +11,7 @@ class SearchTextField extends StatefulWidget {
   final void Function(String)? onTap;
   final void Function(String)? onEditingComplete;
   final void Function(String)? onChange;
+  final void Function()? onTextReset;
   final String initialValue;
   final bool readOnly;
   final bool focus;
@@ -33,6 +34,7 @@ class SearchTextField extends StatefulWidget {
     this.onTap,
     this.controller,
     this.onEditingComplete,
+    this.onTextReset,
     this.initialValue = "",
     this.readOnly = false,
     this.focus = true,
@@ -113,6 +115,7 @@ class _SearchTextFieldState extends State<SearchTextField> {
             },
             readOnly: widget.readOnly,
             onEditingComplete: () {
+              _focusNode.nextFocus();
               if (widget.onEditingComplete != null)
                 widget.onEditingComplete!(_searchQuery.value);
             },
@@ -145,6 +148,8 @@ class _SearchTextFieldState extends State<SearchTextField> {
                                 _textEditingController.text = "";
                                 _searchQuery.value = "";
                               });
+                              if (widget.onTextReset != null)
+                                widget.onTextReset!();
                             },
                       icon: widget.suffixIcon ??
                           Icon(

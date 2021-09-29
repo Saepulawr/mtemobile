@@ -54,45 +54,48 @@ class CardBarangMasuk extends StatelessWidget {
           child: Row(
             children: [
               //image
-              NetworkImageLoader(
-                width: imageWidth,
-                // height: imageHeight,
-                urlImage: data.image!,
-                borderRadius: BorderRadius.only(
-                  topLeft: Themes.radius10,
-                  bottomLeft: Themes.radius10,
-                ),
-                backgroundColor: Themes.primary,
-              ),
               Expanded(
                 child: Container(
-                  constraints: BoxConstraints(maxWidth: maxContentWidth),
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: Themes.padding12,
+                  constraints: BoxConstraints(minWidth: imageWidth),
+                  child: NetworkImageLoader(
+                    // width: imageWidth,
+                    // height: imageHeight,
+                    urlImage: data.image!,
+                    borderRadius: BorderRadius.only(
+                      topLeft: Themes.radius10,
+                      bottomLeft: Themes.radius10,
+                    ),
+                    backgroundColor: Themes.primary,
                   ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      //owner name
-                      Padding(
-                        padding: const EdgeInsets.only(top: Themes.padding8),
-                        child: Text(
-                          data.ownerName!,
-                          style: Themes.body,
-                        ),
+                ),
+              ),
+              Container(
+                constraints: BoxConstraints(maxWidth: maxContentWidth),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: Themes.padding12,
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    //owner name
+                    Padding(
+                      padding: const EdgeInsets.only(top: Themes.padding8),
+                      child: Text(
+                        data.ownerName!,
+                        style: Themes.body,
                       ),
-                      //tanggal masuk
-                      Padding(
-                        padding: const EdgeInsets.only(top: Themes.padding5),
-                        child: Text(
-                          data.dateIn!,
-                          style: Themes.caption
-                              .copyWith(color: Colors.white.withOpacity(0.9)),
-                        ),
+                    ),
+                    //tanggal masuk
+                    Padding(
+                      padding: const EdgeInsets.only(top: Themes.padding5),
+                      child: Text(
+                        data.dateIn!,
+                        style: Themes.caption
+                            .copyWith(color: Colors.white.withOpacity(0.9)),
                       ),
-                      _buildMotorProperties(data.inductionMotor!)
-                    ],
-                  ),
+                    ),
+                    _buildMotorProperties(data.inductionMotor!)
+                  ],
                 ),
               ),
             ],
@@ -139,19 +142,25 @@ class CardBarangMasuk extends StatelessWidget {
           SizedBox(
             width: 8,
           ),
-          Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                title,
-                style: Themes.primaryFont,
-              ),
-              Text(
-                value,
-                style: Themes.secondayFont,
-              )
-            ],
+          Flexible(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  title,
+                  style: Themes.primaryFont,
+                  overflow: TextOverflow.ellipsis,
+                  maxLines: 2,
+                ),
+                Text(
+                  value,
+                  style: Themes.secondayFont,
+                  overflow: TextOverflow.ellipsis,
+                  maxLines: 2,
+                )
+              ],
+            ),
           )
         ],
       ),
@@ -198,7 +207,7 @@ class CardBarangMasuk extends StatelessWidget {
                 ),
                 title: "Capacitor",
                 value: motor.capacitor!
-                    .map((e) => e.microFarad! + "uF " + e.volt! + " Volt")
+                    .map((e) => e.microFarad! + "uF " + e.volt! + "V")
                     .toList()
                     .join("\n"),
               ),
@@ -236,7 +245,7 @@ class CardBarangMasuk extends StatelessWidget {
                     style: Themes.primaryFont.copyWith(
                         color: Themes.primary,
                         fontWeight: FontWeight.bold,
-                        fontSize: 18),
+                        fontSize: 14),
                   ),
                 ),
                 title: "Ampere",
@@ -273,7 +282,7 @@ class CardBarangMasuk extends StatelessWidget {
                     style: Themes.primaryFont.copyWith(
                         color: Themes.primary,
                         fontWeight: FontWeight.bold,
-                        fontSize: 18),
+                        fontSize: 12),
                   ),
                 ),
                 title: "Frequency",

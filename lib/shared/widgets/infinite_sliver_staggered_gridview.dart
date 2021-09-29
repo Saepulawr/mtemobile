@@ -55,7 +55,6 @@ class _InfiniteSliverStaggeredGridViewState
             child: CircularProgressIndicator(),
           ))
         ];
-
     super.initState();
   }
 
@@ -91,8 +90,7 @@ class _InfiniteSliverStaggeredGridViewState
         crossAxisSpacing: widget.crossAxisSpacing,
         mainAxisSpacing: widget.mainAxisSpacing,
         itemBuilder: (context, index) {
-          if (!_hasScroll() &&
-              index == widget.itemCount &&
+          if (index == widget.itemCount &&
               _lastLoadedEvent == null &&
               widget.hasNext) {
             _lastLoadedEvent = widget.itemCount;
