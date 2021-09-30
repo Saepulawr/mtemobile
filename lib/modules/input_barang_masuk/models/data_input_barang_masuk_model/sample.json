@@ -1,0 +1,52 @@
+{
+    "owner" :{
+        "id" : "UUID",
+        "name" : "Blablabla"
+    },
+    "image" : "base64",
+    "inductionMotor" : {
+        "id" : "{{$randomUUID}}",
+        "brand" : "{{$randomProductName}}",
+        "model" : "{{$randomProductName}}",
+        "phase" : 3,
+        "insulationClass" : "F",
+        "weight" : "50.3",
+        "ambientTemperature" : "40",
+        "IP" : "54",
+        "cosPhi" : "0.89 - 0.86",
+        "poles" : [
+            "4"
+        ],
+        "kw" : ["5.5"],
+        "hp" : ["7.5"],
+        "rpm" : [
+            "1395",
+            "1400"
+        ],
+        "volt" : [
+            "220",
+            "380"
+        ],
+        "amps" : [
+            "5.3",
+            "2.0"
+        ],
+        "hz" : [
+            "50",
+            "60"
+        ],
+        "connection" :[
+            "Star","Delta"
+        ],
+        "bearings" :[
+            "3201ZZ","6201ZZ"
+        ],
+        "capacitor" :[
+            {
+                "microFarad" : "25",
+                "volt" : "450"
+            }
+        ],
+        "springCaps" : false
+    }
+}

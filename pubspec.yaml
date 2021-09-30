@@ -21,7 +21,8 @@ environment:
   sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
-  flash: ^2.0.2
+  # file_picker: ^4.1.3
+  image_picker: ^0.8.4
   # card_swiper: ^1.0.4
   url_launcher: ^6.0.10 #ios harus di setting dulu,coba liat dokumentasinya di https://pub.dev/packages/url_launcher
   # persistent_bottom_nav_bar: ^4.0.2

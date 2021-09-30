@@ -3,18 +3,18 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/instance_manager.dart';
 import 'package:mtemobile/config/const.dart';
+import 'package:mtemobile/config/routes.dart';
 import 'package:mtemobile/modules/barang_masuk/models/filter_model/filter_model.dart';
 import 'package:mtemobile/modules/barang_masuk/view/layout/filter_layout.dart';
 import 'package:mtemobile/modules/barang_masuk/view/widget/card_barang_masuk.dart';
+import 'package:mtemobile/shared/themes/button.dart';
 import 'package:mtemobile/shared/themes/theme.dart';
-import 'package:mtemobile/shared/widgets/card/card_infinite_scroll/card_loading_infinite_scroll.dart';
 import 'package:mtemobile/shared/widgets/customDialog/custom_dialog.dart';
 import 'package:mtemobile/shared/widgets/flutter_staggered_grid_view/src/widgets/staggered_tile.dart';
 import 'package:mtemobile/shared/widgets/infinite_sliver_staggered_gridview.dart';
 import 'package:mtemobile/shared/widgets/pull_to_refresh.dart/pull_to_resfreh.dart';
 import 'package:mtemobile/shared/widgets/textfield/search_textfield.dart';
 import '../controller/barang_masuk_controller.dart';
-import 'package:flash/flash.dart';
 
 class BarangMasuk extends StatefulWidget {
   BarangMasuk({Key? key}) : super(key: key);
@@ -137,7 +137,47 @@ class _BarangMasukState extends State<BarangMasuk>
               ],
             ),
             floatingActionButton: FloatingActionButton(
-              onPressed: () {},
+              onPressed: () {
+                Get.toNamed(RoutesName.inputBarangMasuk);
+                return;
+                showCustomDialog(
+                  context: context,
+                  backgroundColor: Themes.primary,
+                  builder: (context, controller) {
+                    return Column(
+                      children: [
+                        Icon(
+                          Icons.help,
+                          color: Colors.white,
+                          size: 60,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(16.0),
+                          child: Text("Ada surat jalan?"),
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            primaryButton(
+                                elevation: 0.0,
+                                backgroundColor: Colors.green,
+                                text: "Ada",
+                                onPressed: () {}),
+                            SizedBox(
+                              width: 16.0,
+                            ),
+                            primaryButton(
+                                elevation: 0.0,
+                                backgroundColor: Colors.red,
+                                text: "Ga ada",
+                                onPressed: () {})
+                          ],
+                        )
+                      ],
+                    );
+                  },
+                );
+              },
               child: Icon(Icons.add),
             ),
           );

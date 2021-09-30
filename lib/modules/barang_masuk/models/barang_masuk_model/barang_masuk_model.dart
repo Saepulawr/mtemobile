@@ -1,4 +1,5 @@
 import 'data.dart';
+
 class BarangMasukModel {
   final bool? success;
   final Data? data;
@@ -9,12 +10,17 @@ class BarangMasukModel {
   @override
   String toString() {
     return 'BarangMasukModel(success: $success, data: $data)';
-}  factory BarangMasukModel.fromJson(Map<String, dynamic> json) => BarangMasukModel(
-success: json['success'] as bool?,
-        data: json['data'] == null ? null : Data.fromJson(json['data'] as Map<String, dynamic>),
+  }
+
+  factory BarangMasukModel.fromJson(Map<String, dynamic> json) =>
+      BarangMasukModel(
+        success: json['success'] as bool?,
+        data: json['data'] == null
+            ? null
+            : Data.fromJson(json['data'] as Map<String, dynamic>),
       );
   Map<String, dynamic> toJson() => {
-'success': success,
+        'success': success,
         'data': data?.toJson(),
       };
 }

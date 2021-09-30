@@ -10,7 +10,7 @@ class Themes {
   //Color
   static const Color primary = Color(0xff182243);
   static const Color primaryDark = Color(0xff047857);
-  static const Color primaryLight = Color(0xffD1FAE5);
+  static const Color primaryLight = Color(0xff154a78);
   static const Color secondary = Color(0xff00a4f1);
   static const Color black = Color(0xff1F2937);
   static const Color blackLight = Color(0xffF3F4F6);
