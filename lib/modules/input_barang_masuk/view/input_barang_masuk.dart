@@ -1,10 +1,12 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:mtemobile/modules/input_barang_masuk/models/data_input_barang_masuk_model/data_input_barang_masuk_model.dart';
 import 'package:mtemobile/shared/themes/theme.dart';
 import 'package:mtemobile/shared/utils/animated/animated_scrolling.dart';
+import 'package:mtemobile/shared/utils/image_viewer/image_viewer.dart';
 import 'package:mtemobile/shared/widgets/show_up_animation-2.0.0/show_up_animation.dart';
 
 class InputBarangMasuk extends StatefulWidget {
@@ -26,45 +28,56 @@ class _InputBarangMasukState extends State<InputBarangMasuk> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // resizeToAvoidBottomInset: false,
       key: _keyScafold,
       backgroundColor: Themes.primary,
       appBar: AppBar(
         title: Text("Tambah data"),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              "Foto barang",
-              style: Themes.title,
-            ),
-            ValueListenableBuilder<List<String>>(
-              valueListenable: _pathImages,
-              builder: (context, value, child) => Container(
-                margin: EdgeInsets.symmetric(vertical: 16.0),
-                child: Wrap(
-                  children: [
-                    ...value.map((e) => _thumbnailImage(
-                          path: e,
-                          onTapRemove: (path) {
-                            _pathImages.value.remove(path);
-                            _pathImages.notifyListeners();
-                          },
-                        )),
-                    _pathImages.value.length >= 5
-                        ? Container()
-                        : _thumbnailAddImage()
-                  ],
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                "Foto barang",
+                style: Themes.title,
+              ),
+              ValueListenableBuilder<List<String>>(
+                valueListenable: _pathImages,
+                builder: (context, value, child) => Container(
+                  margin: EdgeInsets.symmetric(vertical: 16.0),
+                  child: Wrap(
+                    children: [
+                      ...value.map((e) => _thumbnailImage(
+                            path: e,
+                            onTap: (path) {
+                              Get.to(() => ImageViewer(
+                                    imagesPath: _pathImages.value,
+                                    backgroundColor: Themes.primary,
+                                    initialIndex: _pathImages.value.indexOf(e),
+                                    selectedIndicatorColor: Themes.secondary,
+                                  ));
+                            },
+                            onTapRemove: (path) {
+                              _pathImages.value = List.from(_pathImages.value)
+                                ..remove(path);
+                            },
+                          )),
+                      _pathImages.value.length >= 5
+                          ? Container()
+                          : _thumbnailAddImage()
+                    ],
+                  ),
                 ),
               ),
-            ),
-            _input(
-                icon: Icons.person,
-                labeltext: "Dari",
-                hintText: "Masukan nama pemilik barang"),
-          ],
+              _input(
+                  icon: Icons.person,
+                  labeltext: "Dari",
+                  hintText: "Masukan nama pemilik barang"),
+            ],
+          ),
         ),
       ),
     );
@@ -96,8 +109,8 @@ class _InputBarangMasukState extends State<InputBarangMasuk> {
                     final XFile? photo =
                         await _picker.pickImage(source: ImageSource.camera);
                     if (photo != null) {
-                      _pathImages.value.add(photo.path);
-                      _pathImages.notifyListeners();
+                      _pathImages.value = List.from(_pathImages.value)
+                        ..add(photo.path);
                     }
                   },
                 ),
@@ -260,6 +273,34 @@ class _InputBarangMasukState extends State<InputBarangMasuk> {
             ),
           )
         ],
+      ),
+    );
+  }
+}
+
+class PhotoHero extends StatelessWidget {
+  const PhotoHero({Key? key, required this.photo, this.onTap, this.width})
+      : super(key: key);
+
+  final String photo;
+  final VoidCallback? onTap;
+  final double? width;
+
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: width,
+      child: Hero(
+        tag: photo,
+        child: Material(
+          color: Colors.transparent,
+          child: InkWell(
+            onTap: onTap,
+            child: Image.asset(
+              photo,
+              fit: BoxFit.contain,
+            ),
+          ),
+        ),
       ),
     );
   }
