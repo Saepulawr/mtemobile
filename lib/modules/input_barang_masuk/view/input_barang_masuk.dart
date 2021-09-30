@@ -1,9 +1,12 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_typeahead/flutter_typeahead.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:mtemobile/modules/input_barang_masuk/api/input_barang_masuk_api.dart';
 import 'package:mtemobile/modules/input_barang_masuk/models/data_input_barang_masuk_model/data_input_barang_masuk_model.dart';
+import 'package:mtemobile/shared/models/customer_model/customer.dart';
 import 'package:mtemobile/shared/themes/theme.dart';
 import 'package:mtemobile/shared/utils/animated/animated_scrolling.dart';
 import 'package:mtemobile/shared/utils/image_viewer/image_viewer.dart';
@@ -17,9 +20,11 @@ class InputBarangMasuk extends StatefulWidget {
 }
 
 class _InputBarangMasukState extends State<InputBarangMasuk> {
-  DataInputBarangMasukModel _newData = DataInputBarangMasukModel();
   GlobalKey<ScaffoldState> _keyScafold = GlobalKey();
   ValueNotifier<List<String>> _pathImages = ValueNotifier([]);
+  DataInputBarangMasukModel _newData = DataInputBarangMasukModel();
+  Customer? _selectedCustomer;
+  final TextEditingController _typeAheadController = TextEditingController();
   @override
   void initState() {
     super.initState();
@@ -28,7 +33,7 @@ class _InputBarangMasukState extends State<InputBarangMasuk> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // resizeToAvoidBottomInset: false,
+      resizeToAvoidBottomInset: false,
       key: _keyScafold,
       backgroundColor: Themes.primary,
       appBar: AppBar(
@@ -40,6 +45,7 @@ class _InputBarangMasukState extends State<InputBarangMasuk> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              //FOTO
               Text(
                 "Foto barang",
                 style: Themes.title,
@@ -72,10 +78,77 @@ class _InputBarangMasukState extends State<InputBarangMasuk> {
                   ),
                 ),
               ),
-              _input(
-                  icon: Icons.person,
-                  labeltext: "Dari",
-                  hintText: "Masukan nama pemilik barang"),
+              //input nama pemilik
+              // _input(
+              //     icon: Icons.person,
+              //     labeltext: "Dari",
+              //     hintText: "Masukan nama pemilik barang"),
+              TypeAheadFormField<Customer?>(
+                hideSuggestionsOnKeyboardHide: false,
+                suggestionsBoxDecoration: SuggestionsBoxDecoration(
+                    constraints: BoxConstraints(minHeight: 300),
+                    color: Themes.primaryLight),
+                textFieldConfiguration: TextFieldConfiguration(
+                  controller: _typeAheadController,
+                  autofocus: true,
+                  style: TextStyle(color: Colors.white),
+                  decoration: InputDecoration(
+                    icon: Icon(
+                      Icons.person,
+                      color: Colors.white,
+                    ),
+                    hintText: "Masukan nama pemilik barang",
+                    hintStyle: TextStyle(color: Colors.white70),
+                    labelStyle: TextStyle(color: Colors.white),
+                    labelText: "Dari",
+                    enabledBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.white),
+                    ),
+                    focusedBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.white),
+                    ),
+                    border: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.white),
+                    ),
+                  ),
+                ),
+                suggestionsCallback: (pattern) async {
+                  final result = await InputBarangMasukApi()
+                      .searchCustomer(searchQuery: pattern);
+                  if (result.isError) {
+                    //error
+                    return [];
+                  } else {
+                    return result.data!.data!.customers!;
+                  }
+                },
+                itemBuilder: (context, suggestion) {
+                  // print(suggestion);
+                  // return Text(
+                  //   suggestion,
+                  //   style: TextStyle(color: Colors.black),
+                  // );
+                  return ListTile(
+                    leading: Icon(
+                      Icons.person,
+                      color: Colors.white,
+                      size: 32,
+                    ),
+                    title: Text(
+                      suggestion!.name!,
+                      style: Themes.title,
+                    ),
+                    subtitle: Text(
+                      suggestion.address!,
+                      style: Themes.subtitle,
+                    ),
+                  );
+                },
+                onSuggestionSelected: (suggestion) {
+                  _newData = _newData.copyWith(customer: suggestion);
+                  _typeAheadController.text = suggestion!.name!;
+                },
+              )
             ],
           ),
         ),
@@ -159,8 +232,8 @@ class _InputBarangMasukState extends State<InputBarangMasuk> {
               final XFile? photo =
                   await _picker.pickImage(source: ImageSource.camera);
               if (photo != null) {
-                _pathImages.value.add(photo.path);
-                _pathImages.notifyListeners();
+                _pathImages.value = List.from(_pathImages.value)
+                  ..add(photo.path);
               }
             },
             child: Icon(

@@ -15,6 +15,7 @@ class ApiEndpoint {
     _hostApi = host ?? _hostAktif;
   }
   //code-gen.dart - tolong jangan dihapus comment ini!
+  String get inputBarangMasukSearchCustomerEndpoint => _hostApi + "/mtemobile/api/customer/search";
   String get barangMasukGetDaftarBarangMasukEndpoint =>
       _hostApi + "/mtemobile/api/barangmasuk/list";
 }

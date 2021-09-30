@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:mtemobile/config/const.dart';
 import 'package:mtemobile/modules/barang_masuk/models/filter_model/filter_model.dart';
 
@@ -12,13 +11,18 @@ class BarangMasukApi {
   Future<ApiResult<BarangMasukModel>> getDaftarBarangMasuk({
     required int page,
     String searchQuery = "",
+    int itemsPerpage = Const.itemsPerpage,
     FilterModel? filter,
   }) async {
     if (filter == null) filter = Const.defaultFilter;
     return await DioHandler<BarangMasukModel>().post(
       url: _apiEndpoint.barangMasukGetDaftarBarangMasukEndpoint,
       header: {},
-      params: {"page": page.toString(), "searchQuery": searchQuery},
+      params: {
+        "page": page.toString(),
+        "searchQuery": searchQuery,
+        "itemsPerpage": itemsPerpage.toString(),
+      },
       data: filter.toJson(),
     );
   }

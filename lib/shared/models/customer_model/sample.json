@@ -1,0 +1,10 @@
+{
+    "customer" : {
+                "id" : "{{$randomUUID}}",
+                "name" : "{{$randomProductName}}",
+                "address" : "{{$randomCity}}",
+                "email" : "test@mail.com",
+                "telp" : "987988080980"
+            }
+        
+}

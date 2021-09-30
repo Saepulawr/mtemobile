@@ -81,7 +81,7 @@ class CardBarangMasuk extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.only(top: Themes.padding8),
                       child: Text(
-                        data.ownerName!,
+                        data.customer!.name!,
                         style: Themes.body,
                       ),
                     ),

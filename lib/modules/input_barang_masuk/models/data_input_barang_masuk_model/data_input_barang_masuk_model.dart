@@ -1,26 +1,25 @@
+import 'package:mtemobile/shared/models/customer_model/customer.dart';
 import 'package:mtemobile/shared/models/induction_motor_model/induction_motor.dart';
 
-import 'owner.dart';
-
 class DataInputBarangMasukModel {
-  final Owner? owner;
+  final Customer? customer;
   final List<String>? images;
   final InductionMotor? inductionMotor;
   const DataInputBarangMasukModel({
-    this.owner,
+    this.customer,
     this.images,
     this.inductionMotor,
   });
   @override
   String toString() {
-    return 'DataInputBarangMasukModel(owner: $owner, inductionMotor: $inductionMotor)';
+    return 'DataInputBarangMasukModel(customer: $customer, inductionMotor: $inductionMotor)';
   }
 
   factory DataInputBarangMasukModel.fromJson(Map<String, dynamic> json) =>
       DataInputBarangMasukModel(
-        owner: json['owner'] == null
+        customer: json['customer'] == null
             ? null
-            : Owner.fromJson(json['owner'] as Map<String, dynamic>),
+            : Customer.fromJson(json['customer'] as Map<String, dynamic>),
         images: List.from(json['images']).map((e) => e.toString()).toList(),
         inductionMotor: json['inductionMotor'] == null
             ? null
@@ -28,7 +27,18 @@ class DataInputBarangMasukModel {
                 json['inductionMotor'] as Map<String, dynamic>),
       );
   Map<String, dynamic> toJson() => {
-        'owner': owner?.toJson(),
+        'customer': customer?.toJson(),
         'inductionMotor': inductionMotor?.toJson(),
       };
+  DataInputBarangMasukModel copyWith({
+    Customer? customer,
+    List<String>? images,
+    InductionMotor? inductionMotor,
+  }) {
+    return DataInputBarangMasukModel(
+      customer: customer ?? this.customer,
+      images: images ?? this.images,
+      inductionMotor: inductionMotor ?? this.inductionMotor,
+    );
+  }
 }

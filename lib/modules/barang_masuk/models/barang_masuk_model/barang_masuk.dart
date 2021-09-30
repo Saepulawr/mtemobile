@@ -1,30 +1,29 @@
+import 'package:mtemobile/shared/models/customer_model/customer.dart';
+
 import '../../../../shared/models/induction_motor_model/induction_motor.dart';
 
 class BarangMasuk {
   final String? id;
   final String? image;
-  final String? ownerName;
-  final String? ownerAddress;
+  final Customer? customer;
   final String? dateIn;
   final InductionMotor? inductionMotor;
   const BarangMasuk({
     this.id,
     this.image,
-    this.ownerName,
-    this.ownerAddress,
+    this.customer,
     this.dateIn,
     this.inductionMotor,
   });
   @override
   String toString() {
-    return 'BarangMasuk(id: $id, image : $image, ownerName: $ownerName, ownerAddress: $ownerAddress, dateIn: $dateIn, inductionMotor: $inductionMotor)';
+    return 'BarangMasuk(id: $id, image : $image, customer: $customer, dateIn: $dateIn, inductionMotor: $inductionMotor)';
   }
 
   factory BarangMasuk.fromJson(Map<String, dynamic> json) => BarangMasuk(
         id: json['id'] as String?,
         image: json['image'] as String?,
-        ownerName: json['ownerName'] as String?,
-        ownerAddress: json['ownerAddress'] as String?,
+        customer: Customer.fromJson(json['customer']),
         dateIn: json['dateIn'] as String?,
         inductionMotor: json['inductionMotor'] == null
             ? null
@@ -34,8 +33,7 @@ class BarangMasuk {
   Map<String, dynamic> toJson() => {
         'id': id,
         'image': image,
-        'ownerName': ownerName,
-        'ownerAddress': ownerAddress,
+        'customer': customer,
         'dateIn': dateIn,
         'inductionMotor': inductionMotor?.toJson(),
       };

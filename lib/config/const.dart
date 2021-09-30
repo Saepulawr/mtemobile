@@ -7,7 +7,9 @@ class Const {
   //KEY LOCAL STORAGE
 
   //other
+
   static const double baseMarginHorizontal = 0.0;
+  static const int itemsPerpage = 10;
   static List<SortModel> sortingListItems = [
     SortModel(id: "001", name: "Terbaru"),
     SortModel(id: "002", name: "Terlama"),

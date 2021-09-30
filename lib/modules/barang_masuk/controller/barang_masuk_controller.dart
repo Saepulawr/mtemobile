@@ -22,7 +22,6 @@ class BarangMasukController extends GetxController {
 
       return;
     }
-    print(listBarangMasukPage);
     final result = await _barangMasukApi.getDaftarBarangMasuk(
         page: listBarangMasukPage, searchQuery: searchQuery, filter: filter);
 

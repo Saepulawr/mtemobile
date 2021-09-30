@@ -1,6 +1,5 @@
 import 'dart:convert';
 
-import 'package:hive_flutter/hive_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 ///[LocalStorage]
@@ -8,7 +7,6 @@ class LocalStorage<T> {
   static SharedPreferences? _prefs;
   static Future<void> init() async {
     //init di panggil cukup satu kali,
-    await Hive.initFlutter();
     if (_prefs == null) _prefs = await SharedPreferences.getInstance();
   }
 
